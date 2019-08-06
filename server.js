@@ -2,13 +2,18 @@
 const express = require ("express");
 const app = express();
 const mongoose = require("mongoose");
+const gravatar = require("gravatar");
 
 // Define PORT
 const PORT = process.env.PORT || 5000;
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcampspot_db";
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true });
+
+// Init Middleware
+// Body parser
+app.use(express.json({ extended:false }));
 
 app.get("/", (req, res) => res.send("API running!"));
 
