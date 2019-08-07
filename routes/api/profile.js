@@ -6,6 +6,7 @@ const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 //for the post routes, we want to validate the requests
 const { check, validationResult } = require("express-validator");
+const request = require("request");
 
 // @route  GET api/profile/me
 // @desc   Get current user's profile
@@ -17,7 +18,7 @@ router.get ('/me', auth, async (req,res)=> {
         .populate("user", ["name", "avatar"]);
     //if there is no profile, return an error message
     if(!profile) {
-        return res.status(400).json({ msg: "There is no profile for this user" })
+        return res.status(400).json({ msg: "There is no profile for this user" });
     }
     res.json(profile);
 
@@ -46,7 +47,7 @@ router.post('/', [
     async (req, res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() });
         }
         const {
             website,
@@ -154,5 +155,32 @@ router.delete('/', auth, async (req,res)=> {
 }
 );
 
+// @route  GET api/profile/github/:username
+// @desc   Get user repos from GitHub
+// @access public
+router.get('/github/:username', async (req,res)=> {
+    try {
+        const options = {
+            uri: `https://api.github.com/users/${req.params.username}/repos?per_page=10&sort=created:asc&client_id=${process.env.githubClientId}&client_secret=${process.env.githubClientSecret}`,
+            method: "GET",
+            headers: { "user-agent": "node.js"}
+        }
 
-module.exports = router;    
+        request (options, (error, response, body) => {
+            if(error) console.error(error.message);
+            if(response.statusCode !== 200) 
+            {
+                res.status(404).json({ msg: "No GitHub profile found" });
+            }
+            return res.json(JSON.parse(body));
+        });
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
+}
+);
+
+
+module.exports = router;
