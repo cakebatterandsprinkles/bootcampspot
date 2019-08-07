@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcampspot_db";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false });
 
 // Init Middleware
 // Body parser
