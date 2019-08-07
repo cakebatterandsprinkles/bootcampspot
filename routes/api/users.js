@@ -3,8 +3,7 @@ const router = express.Router();
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-require("dotenv").config();
-// require express validatir to check if the user is sending the data in the requested way
+// require express validator to check if the user is sending the data in the requested way
 const { check, validationResult } = require ("express-validator");
 //bring in the User model
 const User = require("../../models/User");
