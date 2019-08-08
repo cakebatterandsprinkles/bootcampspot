@@ -1,5 +1,9 @@
 const mongoose = require ("mongoose");
 const CourseworkSchema = new mongoose.Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user"
+    },
     title: {
         type: String,
         required: true
@@ -26,10 +30,14 @@ const CourseworkSchema = new mongoose.Schema({
             },
             feedback: {
                 type: String,
+            },
+            date: {
+                type: Date,
+                default: Date.now
             }
         }
     ],
-    date: {
+    deadline: {
         type: Date,
         default: Date.now
     }

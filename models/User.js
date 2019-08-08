@@ -4,6 +4,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    status: {
+        type: String,
+        default: "student"
+    },
     email: {
         type: String,
         required: true,

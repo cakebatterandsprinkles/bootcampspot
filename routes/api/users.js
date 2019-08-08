@@ -26,7 +26,7 @@ router.post('/',[
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const {name, email, password} = req.body;
+    const {name, email, password, status} = req.body;
 
     try {
     // See if the user exists
@@ -46,6 +46,7 @@ router.post('/',[
             name,
             email,
             avatar,
+            status,
             password
         });
 
