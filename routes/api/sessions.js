@@ -16,7 +16,7 @@ const Session = require("../../models/Sessions");
 
 router.get("/", auth, async (req, res) => {
     try {
-        const session = await Session.find("-attendance");
+        const session = await Session.find().select("-attendance");
         return res.json(session);
     } catch (err) {
         console.error(err.message);
@@ -109,7 +109,7 @@ router.post('/attendance/:session_id/:id', [auth,
     try {
         const session = await Session.findById(req.params.session_id);
         const user = await User.findById(req.user.id).select("-password");
-        if (user.id !== req.user.id) {
+        if (user.id !== req.user.id || user.status !== "instructor") {
             return res.status(401).send("User not authorized");
         }
 
