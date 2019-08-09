@@ -22,6 +22,10 @@ const CourseworkSchema = new mongoose.Schema({
                 {
                     link: {
                         type: String,
+                    },
+                    date: {
+                        type: Date,
+                        default: Date.now
                     }
                 }
             ],
@@ -31,7 +35,7 @@ const CourseworkSchema = new mongoose.Schema({
             feedback: {
                 type: String,
             },
-            date: {
+            gradedate: {
                 type: Date,
                 default: Date.now
             }

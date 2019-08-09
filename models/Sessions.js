@@ -1,5 +1,5 @@
 const mongoose = require ("mongoose");
-const AttendanceSchema = new mongoose.Schema({
+const SessionsSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user"
@@ -18,18 +18,14 @@ const AttendanceSchema = new mongoose.Schema({
             ref: "user"
         },
         remote: {
-            type: Number,
-            default: "0"
-        },
-        absence: {
-            type: Number,
-            default: "0"
-        },
-        date: {
-            type: Date,
-            default: Date.now
+            type: Boolean,
+            default: false
         }
-    }]
+    }],
+    date: {
+        type: Date,
+        default: Date.now
+    }
 });
 
-module.exports = Attendance = mongoose.model("attendance", AttendanceSchema);
+module.exports = Sessions = mongoose.model("sessions", SessionsSchema);
