@@ -15,7 +15,7 @@ class UserSignInForm extends React.Component {
         </div>
         
         <div className="w-full px-3">
-          <Button text="Sign In" />
+          <Button text="Sign In" buttonLink="/home"/>
         </div>
       </div>
     }

@@ -7,6 +7,10 @@ module.exports = {
           bg: "#333333",
           border: "#333333",
           dark: "#333333"
+        },
+        blue: {
+          tridark: "#14c6e6",
+          trilight: "#2fe5f8"
         }
       },
     } 

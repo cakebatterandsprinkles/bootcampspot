@@ -8,8 +8,10 @@ import './App.css';
 const App = () => 
   <Router>
     <Fragment>
-      <Route exact path="/" component={SignUp}/>
-      <Route exact path="/signin" component={SignIn}/>
+      <Switch>
+        <Route exact path="/" component={SignUp}/>
+        <Route exact path="/signin" component={SignIn}/>
+      </Switch>
     </Fragment>
   </Router>
 export default App;

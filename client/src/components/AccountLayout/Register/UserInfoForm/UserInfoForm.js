@@ -24,7 +24,7 @@ class UserInfoForm extends React.Component {
         </div>
         
         <div className="w-full px-3">
-          <Button text="Sign Up" />
+          <Button text="Sign Up" buttonLink="/signup"/>
           <ButtonSubtext text="You already have an account?" textLink="Sign In" linkUrl="/signin" />
         </div>
       </div>
