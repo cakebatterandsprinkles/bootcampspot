@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./SignUp.css";
 import UserInfoForm from "./UserInfoForm/UserInfoForm";
 import AccountLeftPanel from "../AccountLeftPanel/AccountLeftPanel";
@@ -13,7 +12,7 @@ class SignUp extends React.Component {
             <AccountLeftPanel />
         </div>
         
-        <div className="w-full xl:w-2/5 h-screen">
+        <div className="w-full xl:w-2/5 h-screen bg-white">
             <div className="w-full p-5 flex flex-row">
                 <div className="font-bold text-gray-dark ml-3 mt-3 text-2xl">BootcampSpot</div>
                 <div className="trilogy-logo ml-auto"><a href="https://www.trilogyed.com"  target="_blank" rel="noopener noreferrer"><img src={TrilogyLogo} alt="trilogy logo"/></a></div>
