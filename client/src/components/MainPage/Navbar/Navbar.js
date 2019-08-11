@@ -16,9 +16,10 @@ export class Navbar extends Component {
                     <Link to="/coursework" className="text-gray-dark text-2xl my-2"><i className="fas fa-fw fa-file-code navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Coursework</p></Link>
                     <Link to="/class" className="text-gray-dark text-2xl my-2"><i className="fas fa-fw fa-users navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Class</p></Link>
                     <Link to="/resources" className="text-gray-dark text-2xl my-2"><i className="fas fa-fw fa-folder-open navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Resources</p></Link>
-                    <a href="https://career.ucf.edu/" className="text-gray-dark text-2xl my-2" target="_blank" rel="noopener noreferrer"><i className="fas fa-fw fa-fingerprint navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Career</p></a>    
+                    <a href="https://career.ucf.edu/" className="text-gray-dark text-2xl my-2" target="_blank" rel="noopener noreferrer"><i className="fas fa-fw fa-fingerprint navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Career</p></a>
+                    <Link to="/support" className="text-gray-dark text-2xl my-2"><i className="fas fa-fw fa-question-circle navbar-icons mx-1"></i><p className="hidden md:inline text-sm font-semibold"> Support</p></Link>    
                 </div>
-                <div className="invisible md:visible m-5 border-gray-dark border-solid border">
+                <div className="invisible md:visible m-5 coding-image">
                     <img src={Image} alt="you should be coding text"/>
                 </div>
             </div>

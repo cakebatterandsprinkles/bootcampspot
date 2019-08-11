@@ -1,0 +1,7 @@
+.post {
+        box-shadow: 4px 4px 6px 1px #ccc;
+}
+
+.post-icons:hover {
+    color: #fb9767;
+}

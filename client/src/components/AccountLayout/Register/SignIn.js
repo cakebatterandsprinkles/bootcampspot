@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react';
 import "./SignUp.css";
 import UserSignInForm from "./UserSignInForm/UserSignInForm";
 import AccountLeftPanel from "../AccountLeftPanel/AccountLeftPanel";
@@ -7,7 +7,8 @@ import UcfLogo from "../Register/images/ucf-logo.png";
 
 class SignIn extends React.Component {
     render () {
-        return <div className="flex flex-col xl:flex-row relative">
+        return <Fragment>
+      <div className="flex flex-col xl:flex-row relative">
         <div className="w-full xl:w-3/5 h-screen">
             <AccountLeftPanel />
         </div>
@@ -29,6 +30,7 @@ class SignIn extends React.Component {
           </div>
         </div>
       </div>
+    </Fragment>
     }
 }
 
