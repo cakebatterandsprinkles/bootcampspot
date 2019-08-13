@@ -8,7 +8,7 @@ export class Announcements extends Component {
         return (
             <div className="m-10 md:m-20 bg-white content-wrapper">
                 <div
-                    className="text-3xl sm:text-4xl md:text-5xl pl-5 pt-3 md:pl-10 md:pt-5 text-gray-dark">
+                    className="text-3xl sm:text-4xl md:text-5xl pl-5 pt-3 md:pl-10 md:pt-5 text-gray-dark flex justify-center md:justify-start">
                     <h1>Announcements</h1>
                 </div>
                 <div className="h-full">

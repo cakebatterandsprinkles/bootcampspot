@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../MainPage/Navbar/Navbar';
-import Background from '../MainPage/images/pic-1.jpg';
+import Background from '../MainPage/images/bricks.jpg';
 import ResourceGrid from './ResourceGrid/ResourceGrid';
 import {withRouter} from "react-router-dom";
 

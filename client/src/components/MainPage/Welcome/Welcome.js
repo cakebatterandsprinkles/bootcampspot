@@ -46,8 +46,8 @@ export class Welcome extends Component {
                 backgroundRepeat: 'no-repeat'
               }}>
                   <div className="m-auto header">
-                    <p className="text-5xl md:text-6xl text-white text-center justify-center p-5"> Welcome { this.state.userName }</p>
-                    <p className="text-xl text-white text-center justify-center px-10 py-5"> { quotesArray[randomNumber()] } </p>
+                    <p className="text-4xl md:text-6xl text-white text-center justify-center p-5"> Welcome { this.state.userName }</p>
+                    <p className="text:base md:text-xl text-white text-center justify-center px-10 py-5"> { quotesArray[randomNumber()] } </p>
                   </div>
             </div>
         )
