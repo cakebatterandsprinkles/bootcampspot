@@ -28,7 +28,7 @@ router.get ('/me', auth, async (req,res)=> {
  }
 });
 
-// @route  GET api/profile
+// @route  POST api/profile
 // @desc   Create or update a user profile
 // @access private
 
@@ -107,7 +107,7 @@ router.post('/', [
 // @access public
 router.get ('/', async (req,res)=> {
     try {
-        const profiles = await Profile.find().populate("user", ["name", "email", "avatar"]);
+        const profiles = await Profile.find().populate("user", ["name", "email", "avatar", "id"]);
         res.json(profiles);
     } catch (err) {
         console.error(err.message);

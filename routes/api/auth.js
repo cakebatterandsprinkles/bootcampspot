@@ -34,7 +34,7 @@ router.post('/',[
     //check if there are errors, and return a proper response
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(401).json({ errors: errors.array() });
     }
 
     const {email, password} = req.body; 
@@ -44,7 +44,7 @@ router.post('/',[
         let user = await User.findOne({ email: email });
         if(!user){
            return res
-                .status(400)
+                .status(401)
                 .json({ errors: [{ msg: "invalid credentials"}] });
         }
     
@@ -54,7 +54,7 @@ router.post('/',[
 
     if (!isMatch) {
         return res
-            .status(400)
+            .status(401)
             .json({ errors: [{ msg: "invalid credentials"}] });
     }
 

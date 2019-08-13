@@ -1,0 +1,27 @@
+.img-container {
+    display:grid;
+    grid-template: repeat(3, 1fr) / repeat(3 , 1fr);
+    grid-gap: 10px;
+    width:150vh;
+    height:150vh;
+
+  }
+  
+  @media (max-aspect-ratio: 3/2) {
+    .img-container {
+      display:grid;
+      grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+      padding: 3rem;
+      grid-gap: 5px;
+      width:100%;
+    }
+  }
+
+  @media (max-aspect-ratio: 1/1) {
+    .img-container {
+      display:grid;
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+      grid-gap: 5px;
+      width:100%;
+    }
+  }

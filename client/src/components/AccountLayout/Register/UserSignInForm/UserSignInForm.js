@@ -46,6 +46,7 @@ class UserSignInForm extends React.Component {
             password: this.state.password
         })
             .then((response) => {
+                localStorage.currentUserToken = response.data.token;
                 this
                     .props
                     .history
@@ -67,7 +68,7 @@ class UserSignInForm extends React.Component {
             </div>
 
             <div className="w-full px-3">
-                <Button text="Sign In" buttonLink="/home" onClick={this.submitForm}/>
+                <Button text="Sign In" buttonLink='/' onClick={this.submitForm}/>
             </div>
         </div>
     }

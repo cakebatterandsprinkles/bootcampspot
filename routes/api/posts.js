@@ -16,7 +16,7 @@ const Post = require("../../models/Post");
 // @access private
 router.post('/', [auth,
     [
-        check("text", "Test is required")
+        check("text", "Text is required")
         .not()
         .isEmpty()
     ]
