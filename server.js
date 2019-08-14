@@ -29,9 +29,9 @@ app.use ("/api/coursework", require("./routes/api/coursework"));
 app.use ("/api/sessions", require("./routes/api/sessions"));
 app.use ("/api/support", require("./routes/api/support"));
 
-app.use(function (req, res) {
+app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
-})
+});
 
 // start server
 app.listen(PORT, () => console.log(`Backend server started on port: ${PORT}`));
