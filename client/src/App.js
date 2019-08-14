@@ -7,8 +7,10 @@ import Dashboard from './components/MainPage/Dashboard';
 import ProfilePage from './components/ProfilePage/ProfilePage';
 import ClassProfile from './components/ClassProfile/ClassProfile';
 import ProfileDetails from './components/ProfileDetails/ProfileDetails';
+import SessionDetails from './components/SessionDetails/SessionDetails';
 import Schedule from './components/Schedule/Schedule';
 import Coursework from './components/Coursework/Coursework';
+import CourseworkDetails from './components/CourseworkDetails/CourseworkDetails';
 import Resources from './components/Resources/Resources';
 import Support from './components/Support/Support';
 import PrivateRoute from "./PrivateRoute";
@@ -23,9 +25,11 @@ const App = () =>
         <PrivateRoute exact path="/home" component={Dashboard}/>
         <PrivateRoute exact path="/profile" component={ProfilePage}/>
         <PrivateRoute exact path="/profile/:id" component={ProfileDetails}/>
+        <PrivateRoute exact path="/session/:id" component={SessionDetails}/>
         <PrivateRoute exact path="/class" component={ClassProfile}/>
         <PrivateRoute exact path="/schedule" component={Schedule}/>
         <PrivateRoute exact path="/coursework" component={Coursework}/>
+        <PrivateRoute exact path="/coursework/:id" component={CourseworkDetails}/>
         <PrivateRoute exact path="/resources" component={Resources}/>
         <PrivateRoute exact path="/support" component={Support}/>
         <PrivateRoute exact path="/signout" component={SignOut}/>

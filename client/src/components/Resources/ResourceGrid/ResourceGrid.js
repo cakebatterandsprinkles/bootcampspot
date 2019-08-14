@@ -4,10 +4,10 @@ import './ResourceGrid.css';
 import HtmlLogo from '../images/htmllogo-01.png';
 import CssLogo from '../images/csslogo-01.png';
 import JsLogo from '../images/jslogo-01.png';
-import NodejsLogo from '../images/m3AHC2wYm1nxMRHgvysHGHZa4.png';
+import NodejsLogo from '../images/nodejs.png';
 import MysqlLogo from '../images/mysql.svg';
 import ExpressLogo from '../images/express-01.png';
-import MongodbLogo from '../images/kisspng-mongodb-database-nosql-postgresql-mongo-5b39f9e36b1814.0344731115305261794387.png';
+import MongodbLogo from '../images/mongodb.png';
 import HerokuLogo from '../images/Heroku.png';
 
 class ResourceGrid extends React.Component {

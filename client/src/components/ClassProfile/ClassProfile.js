@@ -62,7 +62,7 @@ class ClassProfile extends Component {
                             {this
                                 .state
                                 .users
-                                .map(user => <Card id={user._id} name={user.name} email={user.email} avatar_url={user.avatar}/>)
+                                .map(user => <Card key={user._id} id={user._id} name={user.name} email={user.email} avatar_url={user.avatar}/>)
 }
                         </div>
                     </div>

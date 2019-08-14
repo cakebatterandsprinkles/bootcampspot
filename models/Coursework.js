@@ -12,6 +12,10 @@ const CourseworkSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        default: "technical"
+    },
     submissions: [
         {
             user: {

@@ -7,7 +7,6 @@
     "@fullcalendar/daygrid": "^4.3.0",
     "@fullcalendar/react": "^4.3.0",
     "axios": "^0.19.0",
-    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-moment": "^0.9.2",

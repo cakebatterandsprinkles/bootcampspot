@@ -12,6 +12,10 @@ const SessionsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    type: {
+        type: String,
+        default: "technical"
+    },
     attendance: [{
         user: {
             type: mongoose.Schema.Types.ObjectId,

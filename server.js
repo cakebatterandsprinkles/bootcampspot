@@ -17,6 +17,10 @@ app.use(express.json({ extended:false }));
 
 app.get("/", (req, res) => res.send("API running!"));
 
+if(process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 // Define Routes 
 app.use ("/api/users", require("./routes/api/users"));
 app.use ("/api/auth", require("./routes/api/auth"));
@@ -24,6 +28,7 @@ app.use ("/api/profile", require("./routes/api/profile"));
 app.use ("/api/posts", require("./routes/api/posts"));
 app.use ("/api/coursework", require("./routes/api/coursework"));
 app.use ("/api/sessions", require("./routes/api/sessions"));
+app.use ("/api/support", require("./routes/api/support"));
 
 // start server
 app.listen(PORT, () => console.log(`Backend server started on port: ${PORT}`));

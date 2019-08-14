@@ -11,15 +11,13 @@ const ProfileSchema = new mongoose.Schema({
         type: [String],
     },
     skills: {
-        type: [String],
-        required: true
+        type: [String]
     },
     bio: {
         type: String,
     },
     githubusername: {
-        type: String,
-        required: true
+        type: String
     },
     social: {
         youtube: {

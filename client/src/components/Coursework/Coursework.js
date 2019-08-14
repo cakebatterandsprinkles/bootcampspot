@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Navbar from '../MainPage/Navbar/Navbar';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import 'moment/min/moment.min.js';
 import '../../../src/main.scss';
 import axios from "axios";
 import Background from '../MainPage/images/pic-7.jpg';
@@ -29,12 +28,12 @@ class Coursework extends Component {
                         .map(coursework => {
                             return {
                                 title: coursework.title,
-                                url: coursework.description,
+                                url: "/coursework/" + coursework._id,
                                 date: coursework.deadline,
                                 allDay: true,
-                                color: coursework.career
-                                    ? "red"
-                                    : ""
+                                color: coursework.type === "technical"
+                                    ? "purple"
+                                    : "pink"
                             };
                         })
                 });

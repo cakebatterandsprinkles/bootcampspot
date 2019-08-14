@@ -85,7 +85,7 @@ class ProfileDetails extends Component {
                                         .state
                                         .profile
                                         .hobbies
-                                        .map(hobby => <p className="text-lg">{hobby}</p>)}
+                                        .map((hobby, index) => <p key={index} className="text-lg">{hobby}</p>)}
                                 </div>
                                 <div className="flex flex-col items-center p-3">
                                     <p className="text-3xl">Skills</p>
@@ -94,7 +94,7 @@ class ProfileDetails extends Component {
                                         .state
                                         .profile
                                         .skills
-                                        .map(skill => <p className="text-lg">{skill}</p>)}
+                                        .map((skill, index) => <p key={index} className="text-lg">{skill}</p>)}
                                 </div>
                             </div>
                         </div>

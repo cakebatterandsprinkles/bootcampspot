@@ -88,11 +88,11 @@ class ProfilePage extends Component {
                         <div className="w-4/5 lg:w-2/3 mx-auto">
                             <div className="flex flex-wrap mx-3 mb-6 pt-10 px-20 bg-white">
                                 <div
-                                    className="text-3xl sm:text-4xl md:text-5xl px-3 pt-3 text-gray-dark mb-10">
+                                    className="text-3xl sm:text-4xl md:text-5xl px-3 pt-3 text-gray-dark mb-10 w-full">
                                     <h1>Edit Your Profile</h1>
                                 </div>
 
-                                <div className="w-full p-3">
+                                <div className="w-1/2 p-3">
                                     <FormBlock
                                         onChange={this.handleInputChange}
                                         value={this.state.website}
@@ -101,7 +101,7 @@ class ProfilePage extends Component {
                                         placeholderText="www.google.com"/>
                                 </div>
 
-                                <div className="w-full p-3">
+                                <div className="w-1/2 p-3">
                                     <FormBlock
                                         onChange={this.handleInputChange}
                                         value={this.state.bio}
@@ -110,7 +110,7 @@ class ProfilePage extends Component {
                                         placeholderText=""/>
                                 </div>
 
-                                <div className="w-full p-3">
+                                <div className="w-1/2 p-3">
                                     <FormBlock
                                         onChange={this.handleInputChange}
                                         value={this.state.githubusername}
@@ -119,12 +119,57 @@ class ProfilePage extends Component {
                                         placeholderText=""/>
                                 </div>
 
-                                <div className="w-full p-3">
+                                <div className="w-1/2 p-3">
                                     <FormBlock
                                         onChange={this.handleInputChange}
                                         value={this.state.hobbies}
                                         name="hobbies"
                                         labelText="Hobbies"
+                                        placeholderText=""/>
+                                </div>
+
+                                <div className="w-1/2 p-3">
+                                    <FormBlock
+                                        onChange={this.handleInputChange}
+                                        value={this.state.skills}
+                                        name="skills"
+                                        labelText="Skills"
+                                        placeholderText=""/>    
+                                </div>
+
+                                <div className="w-1/2 p-3">
+                                    <FormBlock
+                                        onChange={this.handleInputChange}
+                                        value={this.state.youtube}
+                                        name="youtube"
+                                        labelText="Youtube"
+                                        placeholderText=""/>
+                                </div>
+
+                                <div className="w-1/2 p-3">
+                                    <FormBlock
+                                        onChange={this.handleInputChange}
+                                        value={this.state.instagram}
+                                        name="instagram"
+                                        labelText="Instagram"
+                                        placeholderText=""/>
+                                </div>
+
+                                <div className="w-1/2 p-3">
+                                    <FormBlock
+                                        onChange={this.handleInputChange}
+                                        value={this.state.linkedin}
+                                        name="linkedin"
+                                        labelText="LinkedIn"
+                                        placeholderText=""/>
+                                </div>
+
+                                <div className="w-1/2 p-3">
+                                    <FormBlock
+                                        onChange={this.handleInputChange}
+                                        value={this.state.facebook}
+                                        name="facebook"
+                                        labelText="Facebook"
                                         placeholderText=""/>
                                 </div>
 

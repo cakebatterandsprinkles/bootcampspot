@@ -25,6 +25,20 @@ router.get("/", auth, async (req, res) => {
         });
     }
 });
+// @route  GET api/coursework
+// @desc   Get all coursework to display date, title and description in the calendar
+// @access private
+router.get("/:id", auth, async (req, res) => {
+    try {
+        const coursework = await Coursework.findById(req.params.id);
+        return res.json(coursework);
+    } catch (err) {
+        console.error(err.message);
+        return res.status(500).json({
+            msg: "Server error"
+        });
+    }
+});
 
 // @route  POST api/coursework
 // @desc   POST coursework data
@@ -68,16 +82,11 @@ router.post('/', [auth,
 // @route  GET api/coursework/grade/:id/:coursework_id
 // @desc   Get grades using coursework_id by specific user
 // @access private
-router.get('/submission/:id/:coursework_id', auth, async (req, res) => {
+router.get('/submission/:coursework_id', auth, async (req, res) => {
     try {
         const coursework = await Coursework.findById(req.params.coursework_id);
-        const user = await User.findById(req.user.id).select("-password");
-        if (user.id !== req.user.id) {
-            return res.status(401).send("User not authorized");
-        }
-
-        const userSubmission = coursework.submissions.filter(s => s.user.toString() === user.id)[0];
-        return res.json(userSubmission);
+        const userSubmission = coursework.submissions.filter(s => s.user.toString() === req.user.id)[0];
+        return res.json(userSubmission.submissionlinks);
     
     } catch (err) {
         console.error(err.message);
@@ -89,7 +98,7 @@ router.get('/submission/:id/:coursework_id', auth, async (req, res) => {
 // @desc   POST submission links by using coursework_id and user id
 // @access private
 
-router.post('/submission/:id/:coursework_id', [auth,
+router.post('/submission/:coursework_id', [auth,
     [
         check("links", "Link is required")
         .not()
@@ -105,20 +114,22 @@ router.post('/submission/:id/:coursework_id', [auth,
     try {
         const coursework = await Coursework.findById(req.params.coursework_id);
         const user = await User.findById(req.user.id).select("-password");
-        if (user.id !== req.user.id) {
-            return res.status(401).send("User not authorized");
-        }
-
         const userSubmission = coursework.submissions.filter(s => s.user.toString() === user.id)[0];
 
+        const links = req.body.links.map(link => {
+            return {
+                link: link
+            };
+        });
+
         if (userSubmission) {
-            userSubmission.submissionlinks = req.body.links;
+            userSubmission.submissionlinks = links;
             await coursework.save();
             return res.json(userSubmission);
         } else {
             const newSubmission = {
                 user: user.id,
-                submissionlinks: req.body.links
+                submissionlinks: links
             };
             coursework.submissions.push(newSubmission);
             await coursework.save();

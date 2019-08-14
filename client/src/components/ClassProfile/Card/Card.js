@@ -16,7 +16,7 @@ class Card extends Component {
                 <h3 className='text-3xl sm:text-4xl'>{this.props.name}</h3>
                 <p className='text-lg pb-5'>{this.props.email}</p>
                     <Link to={`/profile/${this.props.id}`}>
-                        <p className='text-lg hover:text-blue-tridark'><i class="fas fa-street-view"></i> View Profile</p>
+                        <p className='text-lg hover:text-blue-tridark'><i className="fas fa-street-view"></i> View Profile</p>
                     </Link>
                 </div></div>
             </div>

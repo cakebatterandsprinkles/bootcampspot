@@ -21,6 +21,7 @@ class Resources extends Component {
                         <p className="text-4xl md:text-5xl text-white text-center justify-center p-5 header"> Recommended Resources </p>
                     </div>
                 </div>
+                
                 <ResourceGrid />
             </div>
     </div>

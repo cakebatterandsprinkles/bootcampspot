@@ -26,6 +26,22 @@ router.get("/", auth, async (req, res) => {
     }
 });
 
+// @route  GET api/sessions
+// @desc   Get all sessions
+// @access private
+
+router.get("/:id", auth, async (req, res) => {
+    try {
+        const session = await Session.findById(req.params.id).select("-attendance");
+        return res.json(session);
+    } catch (err) {
+        console.error(err.message);
+        return res.status(500).json({
+            msg: "Server error"
+        });
+    }
+});
+
 // @route  POST api/sessions
 // @desc   Post sessions if you are instructor
 // @access private

@@ -57,6 +57,15 @@ router.post('/',[
         // save the new user
         await user.save();
 
+        const profile = new Profile({
+            user: user._id,
+            skills: [],
+            hobbies : [],
+
+        });
+
+        await profile.save();
+
     // Return jsonwebtoken
         const payload = {
             user: {
