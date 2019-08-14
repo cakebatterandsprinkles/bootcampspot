@@ -3,6 +3,7 @@ const express = require ("express");
 const app = express();
 const mongoose = require("mongoose");
 require("dotenv").config();
+const path = require("path");
 
 // Define PORT
 const PORT = process.env.PORT || 5000;
@@ -14,8 +15,6 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
 // Init Middleware
 // Body parser
 app.use(express.json({ extended:false }));
-
-app.get("/", (req, res) => res.send("API running!"));
 
 if(process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -29,6 +28,10 @@ app.use ("/api/posts", require("./routes/api/posts"));
 app.use ("/api/coursework", require("./routes/api/coursework"));
 app.use ("/api/sessions", require("./routes/api/sessions"));
 app.use ("/api/support", require("./routes/api/support"));
+
+app.use(function (req, res) {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+})
 
 // start server
 app.listen(PORT, () => console.log(`Backend server started on port: ${PORT}`));
