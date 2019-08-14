@@ -32,7 +32,7 @@ class Coursework extends Component {
                                 date: coursework.deadline,
                                 allDay: true,
                                 color: coursework.type === "technical"
-                                    ? "blue"
+                                    ? "red"
                                     : "green"
                             };
                         })

@@ -135,7 +135,7 @@ class CourseworkDetails extends Component {
                                         placeholderText="www.github.com"/>
                                 </div>)}
                                 
-                                <div className="w-1/2 px-10">
+                                <div className="w-1/5 px-10">
                                   <button onClick={this.addLink} className="bg-blue-tridark hover:bg-red-trilight focus:bg-blue-tridark text-white font-bold uppercase py-3 px-4 text-xs w-full rounded-full">+ Add Link</button>
                                        </div>
                                         <div className="px-10">
