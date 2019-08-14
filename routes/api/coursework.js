@@ -86,7 +86,11 @@ router.get('/submission/:coursework_id', auth, async (req, res) => {
     try {
         const coursework = await Coursework.findById(req.params.coursework_id);
         const userSubmission = coursework.submissions.filter(s => s.user.toString() === req.user.id)[0];
+        if(userSubmission) {
         return res.json(userSubmission.submissionlinks);
+        } else {
+            return res.json([{link: ''}]);
+        }
     
     } catch (err) {
         console.error(err.message);
