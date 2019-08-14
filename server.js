@@ -16,9 +16,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
 // Body parser
 app.use(express.json({ extended:false }));
 
-if(process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+    app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Define Routes 
 app.use ("/api/users", require("./routes/api/users"));
@@ -29,9 +27,9 @@ app.use ("/api/coursework", require("./routes/api/coursework"));
 app.use ("/api/sessions", require("./routes/api/sessions"));
 app.use ("/api/support", require("./routes/api/support"));
 
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+app.use(function (req, res, next) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+})
 
 // start server
 app.listen(PORT, () => console.log(`Backend server started on port: ${PORT}`));
