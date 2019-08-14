@@ -85,7 +85,7 @@ router.post('/', [auth,
 router.get('/submission/:coursework_id', auth, async (req, res) => {
     try {
         const coursework = await Coursework.findById(req.params.coursework_id);
-        const userSubmission = coursework.submissions.filter(s => s.user && s.user.toString() === req.user.id)[0];
+        const userSubmission = coursework.submissions.filter(s => s.user.toString() === req.user.id)[0];
         if(userSubmission) {
         return res.json(userSubmission.submissionlinks);
         } else {
@@ -118,7 +118,7 @@ router.post('/submission/:coursework_id', [auth,
     try {
         const coursework = await Coursework.findById(req.params.coursework_id);
         const user = await User.findById(req.user.id).select("-password");
-        const userSubmission = coursework.submissions.filter(s => s.user && s.user.toString() === user.id)[0];
+        const userSubmission = coursework.submissions.filter(s => s.user.toString() === user.id)[0];
 
         const links = req.body.links.map(link => {
             return {
@@ -173,7 +173,7 @@ router.post('/grade/:id/:coursework_id', [auth,
             return res.status(401).send("User not authorized");
         }
 
-        const userSubmission = coursework.submissions.filter(s => s.user && s.user.toString() === req.params.id)[0];
+        const userSubmission = coursework.submissions.filter(s => s.user.toString() === req.params.id)[0];
 
         if (userSubmission) {
             userSubmission.grade = req.body.grade;
