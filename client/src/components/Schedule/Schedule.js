@@ -33,8 +33,8 @@ export class Schedule extends Component {
                                 url: '/session/' + session._id,
                                 allDay: true,
                                 color: session.type === "technical"
-                                    ? "purple"
-                                    : "pink"
+                                    ? "blue"
+                                    : "green"
                             };
                         })
                 });

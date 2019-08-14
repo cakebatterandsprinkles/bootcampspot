@@ -32,8 +32,8 @@ class Coursework extends Component {
                                 date: coursework.deadline,
                                 allDay: true,
                                 color: coursework.type === "technical"
-                                    ? "purple"
-                                    : "pink"
+                                    ? "blue"
+                                    : "green"
                             };
                         })
                 });
