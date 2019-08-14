@@ -16,7 +16,9 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
 // Body parser
 app.use(express.json({ extended:false }));
 
+if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, 'client/build')));
+}
 
 // Define Routes 
 app.use ("/api/users", require("./routes/api/users"));
