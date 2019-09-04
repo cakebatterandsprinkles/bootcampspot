@@ -8,7 +8,7 @@ Bootcampspot is a portal where coding bootcamp students can see their schedule, 
 
 ### Sign Up
 
-    ![Here is the demo](client/public/gifs/signup.gif)
+![Here is the demo](client/public/gifs/signup.gif)
 
 ## Usage
 
@@ -32,10 +32,9 @@ Bootcampspot is a portal where coding bootcamp students can see their schedule, 
     ![Here is the demo](client/public/gifs/add_coursework.png)
 
 
-5. Users can see their classmates' **profiles**
+5. Users can see their classmates' **profiles**.
 
     ![Here is the demo](client/public/gifs/class.gif)
-    ![Here is the demo](client/public/gifs/fullprofile.gif)
 
 6. Users can see **recommended resources** of each subject. Resources page can only be edited by instructors.
 
